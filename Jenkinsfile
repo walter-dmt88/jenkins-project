@@ -1,7 +1,7 @@
 
 pipeline {
     agent {label "linus"}
-    stage('Hello') {
+    stages('Hello') {
         steps {
             echo "hello from Jenkinsfile"
         }
