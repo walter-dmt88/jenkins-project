@@ -1,5 +1,6 @@
 
 pipeline {
+    agent {label "linus"}
     stages {
         stage('Hello') {
             steps {
