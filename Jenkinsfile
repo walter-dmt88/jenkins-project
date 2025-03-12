@@ -1,6 +1,10 @@
 
 pipeline {
     agent {label "linus"}
+    parameters {
+        booleanParam(defaultValue: false, description: "Enable service?", name: "myBoolean")
+    }
+
     stages {
         stage('Hello') {
             steps {
@@ -23,6 +27,11 @@ pipeline {
             }
             steps {
                 echo "this only run for the PRs"
+            }
+        }
+        stage("Demo") {
+            steps {
+                echo "booleanParam is set to: ${param.myBoolean}"
             }
         }
     }
